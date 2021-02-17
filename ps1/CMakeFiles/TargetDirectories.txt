@@ -1,0 +1,3 @@
+/root/ps1/CMakeFiles/rebuild_cache.dir
+/root/ps1/CMakeFiles/ps1.dir
+/root/ps1/CMakeFiles/edit_cache.dir

@@ -1,0 +1,12 @@
+Enter the equation: 123.456+567.890
+Result: 691.35 
+Enter the equation: 123.456-567.890
+Result: -444.43 
+Enter the equation: 123.456*567.890
+Result: 70109.43 
+Enter the equation: 123.456/567.890
+Result: 0.22 
+Enter the equation: 4^8
+Result: 65536.00 
+Enter the equation: 4$8
+Result: 65536.00 

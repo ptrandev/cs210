@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/ps1.dir/main.c.o CMakeFiles/ps1.dir/math.c.o  -o ps1 

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/ps1/main.c
+stdio.h
+-
+math.h
+/root/ps1/math.h
+
+/root/ps1/math.c
+math.h
+/root/ps1/math.h
+
+/root/ps1/math.h
+
