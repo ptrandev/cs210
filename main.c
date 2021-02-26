@@ -68,7 +68,12 @@ int main () {
     bool results_3 = compareArrays(left_3, left_3_length, right_3, right_3_length);
 
     // print out results, use a ternary operator to print out true or false
+    printf("Array Pair 1\n");
     printf("Result: %s\n", results_2 ? "true" : "false");
+
+    printf("\n");
+
+    printf("Array Pair 2\n");
     printf("Result: %s\n", results_3 ? "true" : "false");
 
     return 0;

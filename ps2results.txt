@@ -15,5 +15,9 @@ Result: 4158.761200
 ====================
 PS2.3: Same or Not the Same?
 ====================
+Array Pair 1
 Result: true
+
+Array Pair 2
 Result: false
+[root@8526a00737
