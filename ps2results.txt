@@ -1,0 +1,19 @@
+===========================
+PS2.1: Largest and Smallest
+===========================
+Array 1
+Largest: 100
+Smallest: -6
+
+Array 2
+Largest: 99
+Smallest: -100
+====================
+PS2.2: Inner Product
+====================
+Result: 4158.761200
+====================
+PS2.3: Same or Not the Same?
+====================
+Result: true
+Result: false
