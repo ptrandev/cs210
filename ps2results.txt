@@ -16,7 +16,7 @@ Result: 4158.761200
 PS2.3: Same or Not the Same?
 ====================
 Array Pair 1
-Result: not same
+Are the arrays the same?: false
 
 Array Pair 2
-Result: not same
+Are the arrays the same?: false
