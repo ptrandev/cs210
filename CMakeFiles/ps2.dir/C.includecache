@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/cs210/main.c
+stdio.h
+-
+ps2.h
+/root/cs210/ps2.h
+
+/root/cs210/ps2.c
+stdio.h
+-
+ps2.h
+/root/cs210/ps2.h
+
+/root/cs210/ps2.h
+stdbool.h
+-
+
