@@ -20,4 +20,3 @@ Result: true
 
 Array Pair 2
 Result: false
-[root@8526a00737
