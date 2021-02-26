@@ -55,13 +55,13 @@ int main () {
     // declare input arrays and calculate length of all arrays
     int left_2[] = {72,90,100,36,21,15,76,-6,63,41,99,27,3,66,19,16,27,47,0,23};
     int right_2[] = {72,90,100,36,21,15,76,-6,63,41,99,27,3,66,18,16,27,47,0,23};
-    int left_2_length = sizeof(left_2) / sizeof(double);
-    int right_2_length = sizeof(right_2) / sizeof(double);
+    int left_2_length = sizeof(left_2) / sizeof(int);
+    int right_2_length = sizeof(right_2) / sizeof(int);
 
     int left_3[] = {72,90,100,36,21,15,76,-6,63,41,99,27,3,66,19,16,27,47,0,23};
     int right_3[] = {72,90,100,36,21,15,76,-6,63,41,99,27,3,66,18,16,27,47,23};
-    int left_3_length = sizeof(left_3) / sizeof(double);
-    int right_3_length = sizeof(right_3) / sizeof(double);
+    int left_3_length = sizeof(left_3) / sizeof(int);
+    int right_3_length = sizeof(right_3) / sizeof(int);
 
     // call function and store results for both pairs of arraus
     bool results_2 = compareArrays(left_2, left_2_length, right_2, right_2_length);
@@ -69,12 +69,12 @@ int main () {
 
     // print out results, use a ternary operator to print out true or false
     printf("Array Pair 1\n");
-    printf("Result: %s\n", results_2 ? "true" : "false");
+    printf("Result: %s\n", results_2 ? "same" : "not same");
 
     printf("\n");
 
     printf("Array Pair 2\n");
-    printf("Result: %s\n", results_3 ? "true" : "false");
+    printf("Result: %s\n", results_3 ? "same" : "not same");
 
     return 0;
 }
