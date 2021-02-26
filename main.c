@@ -69,12 +69,12 @@ int main () {
 
     // print out results, use a ternary operator to print out true or false
     printf("Array Pair 1\n");
-    printf("Result: %s\n", results_2 ? "same" : "not same");
+    printf("Are the arrays the same?: %s\n", results_2 ? "true" : "false");
 
     printf("\n");
 
     printf("Array Pair 2\n");
-    printf("Result: %s\n", results_3 ? "same" : "not same");
+    printf("Are the arrays the same?: %s\n", results_3 ? "true" : "false");
 
     return 0;
 }
