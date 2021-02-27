@@ -43,8 +43,11 @@ int main () {
     const double right[] = {9.17, 4.8, 10.9, 10.12, 17.18, 3.9, 6.19, 5.4, 3.13, 6.1};
     int length = sizeof(left) / sizeof(double);
 
-    // print value of call to inner product function
-    printf("Result: %f\n", inner_product(left, right, length));
+    // print value of call to inner product function if both arrays are the same
+    // size
+    if ((sizeof(left) / sizeof(int)) == (sizeof(right) / sizeof(int))) {
+        printf("Result: %f\n", inner_product(left, right, length));
+    }
 
 
     /* PS2.3 - Same or Not the Same? */
