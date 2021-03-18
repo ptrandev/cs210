@@ -189,7 +189,7 @@ void swap(node* prev, node* trav, node* next) {
         prev->next = trav->next;
     }
 
-    // swap position of the nodes
+    // swap position of the trav and next nodes
     trav->next = next->next;
     next->next = trav;
 }
