@@ -205,13 +205,12 @@ void listSort(void) {
     node* trav = NULL;
     node* next = NULL;
 
-    node* changed = NULL; // keeps track of most recently changed node
-
+    bool changed = false; // tells us if a change to the list has occured
     bool sorting = true; // tells us if sorting is done
 
     // continue sorting from the beginning of the list
     while (sorting) {
-        changed = NULL; // no nodes have changed yet
+        changed = false; // no nodes have changed this itteration
 
         // start traversing at beginning of list
         prev = NULL;
@@ -224,7 +223,7 @@ void listSort(void) {
             // if the next node is smaller than the current node...
             if (next->value < trav->value) {
                 swap(prev, trav, next); // swaps position of trav and next
-                changed = next; // keep track of most recently changed node
+                changed = true; // a change has been made to the list
             }
 
             // move onto the next node to perform comparsion
@@ -237,8 +236,6 @@ void listSort(void) {
         // if a node hasn't been changed after going through entire list ...
         if (!changed) {
             sorting = false; // we are no longer sorting
-
-            changed = NULL; // ground pointer, we're done using it
         }
     }
 
