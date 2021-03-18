@@ -6,4 +6,4 @@ project(ps3 C)
 set(CMAKE_C_STANDARD 99)
 
 # add the executable
-add_executable(ps3 main.c)
+add_executable(ps3 main.c node.c list.c)

@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/ps3.dir/main.c.o CMakeFiles/ps3.dir/node.c.o CMakeFiles/ps3.dir/list.c.o  -o ps3 
