@@ -206,11 +206,11 @@ void listSort(void) {
     node* next = NULL;
 
     bool changed = false; // tells us if a change to the list has occured
-    bool sorting = true; // tells us if sorting is done
+    bool sorting = true; // tells us if we still need to sort the list
 
     // continue sorting from the beginning of the list
     while (sorting) {
-        changed = false; // no nodes have changed this itteration
+        changed = false; // no nodes have changed this iteration
 
         // start traversing at beginning of list
         prev = NULL;
