@@ -4,7 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/root/cs210/main.c" "/root/cs210/build/CMakeFiles/ps3.dir/main.c.o"
+  "/root/cs210/main.c" "/root/cs210/CMakeFiles/ps3.dir/main.c.o"
+  "/root/cs210/node.c" "/root/cs210/CMakeFiles/ps3.dir/node.c.o"
+  "/root/cs210/rpn.c" "/root/cs210/CMakeFiles/ps3.dir/rpn.c.o"
+  "/root/cs210/stack.c" "/root/cs210/CMakeFiles/ps3.dir/stack.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/root/cs210")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/root/cs210/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/root/cs210")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

@@ -10,7 +10,7 @@ typedef struct node {
     struct node *next;
 } node;
 
-node* createNode (int value, int type) {
+node* createNode (double value, int type) {
     node *newNode = NULL; // ground the pointer
 
     newNode = (struct node*) malloc(sizeof(node)); // allocate memory to node

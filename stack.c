@@ -27,10 +27,12 @@ void push(node* node) {
 node* pop() {
     if(!stackEmpty()) {
         struct node* tmp = HEAD; // store HEAD node
-        tmp->next = HEAD; // the next node becomes the HEAD (top of stack)
+        HEAD = tmp->next; // the next node becomes the HEAD (top of stack)
 
         return tmp; // return the popped node (removed from top of stack)
     }
+
+    return NULL;
 }
 
 node* peak() {
@@ -40,8 +42,10 @@ node* peak() {
 }
 
 bool clearStack() {
+    struct node* tmp = HEAD;
     while(!stackEmpty()) {
-        pop();
+        tmp = pop();
+        free(tmp);
     }
 }
 
@@ -51,5 +55,25 @@ bool stackEmpty() {
         return true;
     } else {
         return false;
+    }
+}
+
+void printStack() {
+    if (HEAD) {
+        struct node* trav = HEAD; // start at HEAD node
+
+        printf("[%f", trav->value); // print first node value
+
+        // traverse through stack, printing all node values
+        while(trav->next) {
+            trav = trav->next;
+            printf(",%f", trav->value);
+        }
+
+        printf("]\n"); // done w/ stack, print end bracket
+
+        trav = NULL; // ground pointer, done using it
+    } else {
+        printf("No stack exists. \n");
     }
 }

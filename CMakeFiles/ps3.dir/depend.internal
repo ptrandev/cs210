@@ -3,3 +3,17 @@
 
 CMakeFiles/ps3.dir/main.c.o
  /root/cs210/main.c
+ /root/cs210/node.h
+ /root/cs210/rpn.h
+ /root/cs210/stack.h
+CMakeFiles/ps3.dir/node.c.o
+ /root/cs210/node.c
+ /root/cs210/node.h
+CMakeFiles/ps3.dir/rpn.c.o
+ /root/cs210/node.h
+ /root/cs210/rpn.c
+ /root/cs210/rpn.h
+ /root/cs210/stack.h
+CMakeFiles/ps3.dir/stack.c.o
+ /root/cs210/stack.c
+ /root/cs210/stack.h

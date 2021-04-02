@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /root/cs210
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/cs210/build
+CMAKE_BINARY_DIR = /root/cs210
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cs210/build/CMakeFiles /root/cs210/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cs210/CMakeFiles /root/cs210/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cs210/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cs210/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,87 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/main.c.s
 .PHONY : main.c.s
 
+node.o: node.c.o
+
+.PHONY : node.o
+
+# target to build an object file
+node.c.o:
+	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/node.c.o
+.PHONY : node.c.o
+
+node.i: node.c.i
+
+.PHONY : node.i
+
+# target to preprocess a source file
+node.c.i:
+	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/node.c.i
+.PHONY : node.c.i
+
+node.s: node.c.s
+
+.PHONY : node.s
+
+# target to generate assembly for a file
+node.c.s:
+	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/node.c.s
+.PHONY : node.c.s
+
+rpn.o: rpn.c.o
+
+.PHONY : rpn.o
+
+# target to build an object file
+rpn.c.o:
+	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/rpn.c.o
+.PHONY : rpn.c.o
+
+rpn.i: rpn.c.i
+
+.PHONY : rpn.i
+
+# target to preprocess a source file
+rpn.c.i:
+	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/rpn.c.i
+.PHONY : rpn.c.i
+
+rpn.s: rpn.c.s
+
+.PHONY : rpn.s
+
+# target to generate assembly for a file
+rpn.c.s:
+	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/rpn.c.s
+.PHONY : rpn.c.s
+
+stack.o: stack.c.o
+
+.PHONY : stack.o
+
+# target to build an object file
+stack.c.o:
+	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/stack.c.o
+.PHONY : stack.c.o
+
+stack.i: stack.c.i
+
+.PHONY : stack.i
+
+# target to preprocess a source file
+stack.c.i:
+	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/stack.c.i
+.PHONY : stack.c.i
+
+stack.s: stack.c.s
+
+.PHONY : stack.s
+
+# target to generate assembly for a file
+stack.c.s:
+	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/stack.c.s
+.PHONY : stack.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +243,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... node.o"
+	@echo "... node.i"
+	@echo "... node.s"
+	@echo "... rpn.o"
+	@echo "... rpn.i"
+	@echo "... rpn.s"
+	@echo "... stack.o"
+	@echo "... stack.i"
+	@echo "... stack.s"
 .PHONY : help
 
 
