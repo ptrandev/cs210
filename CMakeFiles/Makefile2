@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /root/cs210
 CMAKE_BINARY_DIR = /root/cs210
 
 #=============================================================================
-# Target rules for target CMakeFiles/ps3.dir
+# Target rules for target CMakeFiles/ps4.dir
 
 # All Build rule for target.
-CMakeFiles/ps3.dir/all:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/depend
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cs210/CMakeFiles --progress-num=1,2,3,4,5 "Built target ps3"
-.PHONY : CMakeFiles/ps3.dir/all
+CMakeFiles/ps4.dir/all:
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/depend
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/root/cs210/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target ps4"
+.PHONY : CMakeFiles/ps4.dir/all
 
 # Include target in all.
-all: CMakeFiles/ps3.dir/all
+all: CMakeFiles/ps4.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ps3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/cs210/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ps3.dir/all
+CMakeFiles/ps4.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/cs210/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ps4.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/cs210/CMakeFiles 0
-.PHONY : CMakeFiles/ps3.dir/rule
+.PHONY : CMakeFiles/ps4.dir/rule
 
 # Convenience name for target.
-ps3: CMakeFiles/ps3.dir/rule
+ps4: CMakeFiles/ps4.dir/rule
 
-.PHONY : ps3
-
-# clean rule for target.
-CMakeFiles/ps3.dir/clean:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/clean
-.PHONY : CMakeFiles/ps3.dir/clean
+.PHONY : ps4
 
 # clean rule for target.
-clean: CMakeFiles/ps3.dir/clean
+CMakeFiles/ps4.dir/clean:
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/clean
+.PHONY : CMakeFiles/ps4.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ps4.dir/clean
 
 .PHONY : clean
 

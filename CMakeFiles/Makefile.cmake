@@ -39,5 +39,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/ps3.dir/DependInfo.cmake"
+  "CMakeFiles/ps4.dir/DependInfo.cmake"
   )

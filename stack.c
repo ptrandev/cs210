@@ -8,7 +8,7 @@ typedef struct node {
     double value;
     int type;
     struct node *next;
-};
+} node;
 
 node* HEAD = NULL;
 
@@ -32,34 +32,38 @@ node* pop() {
         return tmp; // return the popped node (removed from top of stack)
     }
 
-    return NULL;
+    return NULL; // stack is empty, nothing to pop
 }
 
 node* peak() {
     if(!stackEmpty()) {
-        return HEAD;
+        return HEAD; // node at top of stack is the HEAD
     }
+
+    return NULL; // empty stack, no HEAD exists
 }
 
 bool clearStack() {
-    struct node* tmp = HEAD;
+    struct node* tmp; // used to store node to free
+
+    // while the stack contains nodes...
     while(!stackEmpty()) {
-        tmp = pop();
-        free(tmp);
+        tmp = pop(); // pop node and store it
+        free(tmp); // free node from memory
     }
 }
 
 bool stackEmpty() {
-    // when HEAD == NULL, the stack is empty
+    // no HEAD means stack is empty
     if (HEAD == NULL) {
         return true;
-    } else {
-        return false;
     }
+
+    return false; // if HEAD exists, them the stack isn't empty
 }
 
 void printStack() {
-    if (HEAD) {
+    if (!stackEmpty()) {
         struct node* trav = HEAD; // start at HEAD node
 
         printf("[%f", trav->value); // print first node value

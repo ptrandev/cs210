@@ -111,17 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ps3
+# Target rules for targets named ps4
 
 # Build rule for target.
-ps3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ps3
-.PHONY : ps3
+ps4: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ps4
+.PHONY : ps4
 
 # fast build rule for target.
-ps3/fast:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/build
-.PHONY : ps3/fast
+ps4/fast:
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/build
+.PHONY : ps4/fast
+
+errors.o: errors.c.o
+
+.PHONY : errors.o
+
+# target to build an object file
+errors.c.o:
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/errors.c.o
+.PHONY : errors.c.o
+
+errors.i: errors.c.i
+
+.PHONY : errors.i
+
+# target to preprocess a source file
+errors.c.i:
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/errors.c.i
+.PHONY : errors.c.i
+
+errors.s: errors.c.s
+
+.PHONY : errors.s
+
+# target to generate assembly for a file
+errors.c.s:
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/errors.c.s
+.PHONY : errors.c.s
 
 main.o: main.c.o
 
@@ -129,7 +156,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/main.c.o
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -138,7 +165,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/main.c.i
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -147,7 +174,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/main.c.s
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/main.c.s
 .PHONY : main.c.s
 
 node.o: node.c.o
@@ -156,7 +183,7 @@ node.o: node.c.o
 
 # target to build an object file
 node.c.o:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/node.c.o
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/node.c.o
 .PHONY : node.c.o
 
 node.i: node.c.i
@@ -165,7 +192,7 @@ node.i: node.c.i
 
 # target to preprocess a source file
 node.c.i:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/node.c.i
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/node.c.i
 .PHONY : node.c.i
 
 node.s: node.c.s
@@ -174,7 +201,7 @@ node.s: node.c.s
 
 # target to generate assembly for a file
 node.c.s:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/node.c.s
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/node.c.s
 .PHONY : node.c.s
 
 rpn.o: rpn.c.o
@@ -183,7 +210,7 @@ rpn.o: rpn.c.o
 
 # target to build an object file
 rpn.c.o:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/rpn.c.o
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/rpn.c.o
 .PHONY : rpn.c.o
 
 rpn.i: rpn.c.i
@@ -192,7 +219,7 @@ rpn.i: rpn.c.i
 
 # target to preprocess a source file
 rpn.c.i:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/rpn.c.i
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/rpn.c.i
 .PHONY : rpn.c.i
 
 rpn.s: rpn.c.s
@@ -201,7 +228,7 @@ rpn.s: rpn.c.s
 
 # target to generate assembly for a file
 rpn.c.s:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/rpn.c.s
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/rpn.c.s
 .PHONY : rpn.c.s
 
 stack.o: stack.c.o
@@ -210,7 +237,7 @@ stack.o: stack.c.o
 
 # target to build an object file
 stack.c.o:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/stack.c.o
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/stack.c.o
 .PHONY : stack.c.o
 
 stack.i: stack.c.i
@@ -219,7 +246,7 @@ stack.i: stack.c.i
 
 # target to preprocess a source file
 stack.c.i:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/stack.c.i
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/stack.c.i
 .PHONY : stack.c.i
 
 stack.s: stack.c.s
@@ -228,7 +255,7 @@ stack.s: stack.c.s
 
 # target to generate assembly for a file
 stack.c.s:
-	$(MAKE) -f CMakeFiles/ps3.dir/build.make CMakeFiles/ps3.dir/stack.c.s
+	$(MAKE) -f CMakeFiles/ps4.dir/build.make CMakeFiles/ps4.dir/stack.c.s
 .PHONY : stack.c.s
 
 # Help Target
@@ -238,8 +265,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... ps3"
+	@echo "... ps4"
 	@echo "... edit_cache"
+	@echo "... errors.o"
+	@echo "... errors.i"
+	@echo "... errors.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
