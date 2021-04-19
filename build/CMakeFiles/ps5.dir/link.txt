@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/ps5.dir/main.c.o CMakeFiles/ps5.dir/rpn.c.o CMakeFiles/ps5.dir/node.c.o CMakeFiles/ps5.dir/stack.c.o CMakeFiles/ps5.dir/errors.c.o  -o ps5 
