@@ -7,8 +7,12 @@
 enum type {OPERATOR, NUMBER};
 
 typedef struct node {
-    double value;
+    union {
+        double value;
+        char operator;
+    } contents;
     int type;
+    int precedence;
     struct node *next;
 } node;
 

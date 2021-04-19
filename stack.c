@@ -5,8 +5,12 @@
 enum type {OPERATOR, NUMBER};
 
 typedef struct node {
-    double value;
+    union {
+        double value;
+        char operator;
+    } contents;
     int type;
+    int precedence;
     struct node *next;
 } node;
 
@@ -66,12 +70,12 @@ void printStack() {
     if (!stackEmpty()) {
         struct node* trav = HEAD; // start at HEAD node
 
-        printf("[%f", trav->value); // print first node value
+        printf("[%f", trav->contents); // print first node value
 
         // traverse through stack, printing all node values
         while(trav->next) {
             trav = trav->next;
-            printf(",%f", trav->value);
+            printf(",%f", trav->contents);
         }
 
         printf("]\n"); // done w/ stack, print end bracket
