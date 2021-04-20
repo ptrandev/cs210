@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "node.h"
 #include "errors.h"
+#include "converter.h"
 
 
 enum type {OPERATOR, NUMBER};
@@ -27,7 +28,15 @@ node* createNode (double value, int type) {
         return NULL;
     }
 
-    newNode->value = value; // assign value to node
+    // assign values based upon node type
+    if (type == NUMBER) {
+        newNode->contents.value = value;
+    } else {
+        // cast double to char for operators, set precendence w/ helper function
+        newNode->contents.operator = (char) value;
+        newNode->precedence = getPrecedence((char) value);
+    }
+
     newNode->type = type; // assign type to node
     newNode->next = NULL; // new nodes do not point to the next node
 

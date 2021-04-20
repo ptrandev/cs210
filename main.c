@@ -1,51 +1,61 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "rpn.h"
 #include "stack.h"
 #include "node.h"
+#include "converter.h"
 
-int main() {
-    int status;
+int main(int argc, char* argv[]) {
+    // error handling if correct amount of CLI arguemnts aren't given 
+    if (argc < 3) {
+        printf("missing argument(s)\n");
+        return -1;
+    }
 
-    char expression_1[] = {"24.2 12 / 3 / 17 + +"};
+    FILE * input = fopen(argv[1], "r"); // infix equations to process
+    FILE *data = fopen(argv[2], "w"); // output of evaluations
 
-    printf("EXPRESSION: %s\n", expression_1);
-    printf("EVALUATION: %f\n", evaluate(expression_1, &status));
-    printf("---\n");
+    // handle error (file doesn't exist)
+    if (!input) {
+        perror("I/O error: ");
+        return -1;
+    }
 
-    char expression_2[] = {"+"};
+    char dataLine[100]; // for storing input strings from file
+    char *expression; // for storing postfix expression
 
-    printf("EXPRESSION: %s\n", expression_2);
-    printf("EVALUATION: %f\n", evaluate(expression_2, &status));
-    printf("---\n");
+    int status = 0; // status code
+    double result = 0.0; // result of postfix expression evaluation
 
-    char expression_3[] = {"17 22 / 4 * 16 -"};
+    // process each line of input file
+    while (fgets(dataLine, 100, input)) {
+        dataLine[strcspn(dataLine, "\n")] = 0; // remove trailing newline
+        fprintf(data, "INFIX: %s\n", dataLine); // print infix notation to file
+        
+        // convert from infix to postfix notation
+        expression = convertToPostfix(dataLine, &status);
 
-    printf("EXPRESSION: %s\n", expression_3);
-    printf("EVALUATION: %f\n", evaluate(expression_3, &status));
-    printf("---\n");
+        // if conversion is successful...
+        if (expression != NULL) {
+            fprintf(data, "POSTFIX: %s\n", expression); // print postfix notation to file
 
-    char expression_4[] = {"2 8 ^ 3 /"};
+            // evaluate postfix expression and print result to file
+            result = evaluate(expression, &status);
+            fprintf(data, "RESULT: %f\n", result);
+        }
+        // else, print invalid input message to file
+        else {
+            fprintf(data, "POSTFIX: INVALID INPUT\n");
+            fprintf(data, "RESULT: INVALID INPUT\n");
+        }
 
-    printf("EXPRESSION: %s\n", expression_4);
-    printf("EVALUATION: %f\n", evaluate(expression_4, &status));
-    printf("---\n");
+        fprintf(data, "\n"); // print newline char to separate outputs
+    }
 
-    char expression_5[] = {"17 22 33 / 4 + 2"};
-
-    printf("EXPRESSION: %s\n", expression_5);
-    printf("EVALUATION: %f\n", evaluate(expression_5, &status));
-    printf("---\n");
-
-    char expression_6[] = {""};
-
-    printf("EXPRESSION: %s\n", expression_6);
-    printf("EVALUATION: %f\n", evaluate(expression_6, &status));
-    printf("---\n");
-
-    char expression_7[] = {"8 7 + 6 - 5 / 4 * 3 ^"};
-
-    printf("EXPRESSION: %s\n", expression_7);
-    printf("EVALUATION: %f\n", evaluate(expression_7, &status));
+    // close our files, done using them
+    fclose(input);
+    fclose(data);
 
     return 0;
 }

@@ -39,7 +39,7 @@ node* pop() {
     return NULL; // stack is empty, nothing to pop
 }
 
-node* peak() {
+node* peek() {
     if(!stackEmpty()) {
         return HEAD; // node at top of stack is the HEAD
     }

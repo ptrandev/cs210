@@ -1,0 +1,32 @@
+INFIX: 4 + 8 * 3
+POSTFIX: 4 8 3 * + 
+RESULT: 28.000000
+
+INFIX: ( 4 + 8 ) * 3
+POSTFIX: 4 8 + 3 * 
+RESULT: 36.000000
+
+INFIX: 6 + 9 + 4 ^ 2
+POSTFIX: 6 9 + 4 2 ^ + 
+RESULT: 31.000000
+
+INFIX: 46 + ( 8 * 4 ) / 2
+POSTFIX: 46 8 4 * 2 / + 
+RESULT: 62.000000
+
+INFIX: 7 ^ 2 * ( 25 + 10 / 5 ) - 13
+POSTFIX: 7 2 ^ 25 10 5 / + * 13 - 
+RESULT: 1310.000000
+
+INFIX: ( 18 / 3 ) ^ 2 + ( ( 13 + 7 ) * 5 ^ 2 )
+POSTFIX: 18 3 / 2 ^ 13 7 + 5 2 ^ * + 
+RESULT: 536.000000
+
+INFIX: ( 18 / 3 ) ^ 2 + ( ( 13 + 7 ) ) * 5 ^ 2 )
+POSTFIX: INVALID INPUT
+RESULT: INVALID INPUT
+
+INFIX: ( 18 / 3 ) ^ 2 + ( ( 13 + 7 ) * 5 ? 2 )
+POSTFIX: INVALID INPUT
+RESULT: INVALID INPUT
+

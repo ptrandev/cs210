@@ -18,7 +18,7 @@ typedef struct node {
     struct node *next;
 } node;
 
-double evaluate (char* expression, int * status) {
+double evaluate (char* expression, int* status) {
     char delimiter[] = " "; // what each of our terms are separated by
     char *token; // used to walk through the expression
 
@@ -56,14 +56,14 @@ double evaluate (char* expression, int * status) {
                 // return result of operation according to the operator
                 switch(*token) {
                     case '+':
-                        result = num_2->value + num_1->value;
+                        result = num_2->contents.value + num_1->contents.value;
                         break;
                     case '-':
-                        result = num_2->value - num_1->value;
+                        result = num_2->contents.value - num_1->contents.value;
                         break;
                     case '/':
                         // ERROR: divide by zero, since the divisor is 0
-                        if (num_1->value == 0.0) {
+                        if (num_1->contents.value == 0.0) {
                             // set status code and print status message
                             *status = 4;
                             printStatusMessage(*status);
@@ -73,13 +73,13 @@ double evaluate (char* expression, int * status) {
                             return 0.0;
                         }
 
-                        result = num_2->value / num_1->value;
+                        result = num_2->contents.value / num_1->contents.value;
                         break;
                     case '*':
-                        result = num_2->value * num_1->value;
+                        result = num_2->contents.value * num_1->contents.value;
                         break;
                     case '^':
-                        result = power(num_2->value, num_1->value);
+                        result = power(num_2->contents.value, num_1->contents.value);
                         break;
                 }
             } 
@@ -147,7 +147,7 @@ double evaluate (char* expression, int * status) {
         return 0.0;
     }
 
-    result = final_node->value; // store the value of the final answer
+    result = final_node->contents.value; // store the value of the final answer
 
     free(final_node); // free the node, we're doing using it
 
