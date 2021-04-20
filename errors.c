@@ -11,6 +11,7 @@ char *errorMessages[] = {
     "STATUS: ERROR - Divide by zero",
     "STATUS: ERROR - No input given",
     "STATUS: ERROR - The input contains invalid characters"
+    "STATUS: ERROR - Memory allocation failed"
 };
 
 void printStatusMessage(int status) {

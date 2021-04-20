@@ -20,10 +20,14 @@ typedef struct node {
 } node;
 
 char* convertToPostfix (char* expression, int* status) {
+    clearStack(); // remove all residual nodes left from prior conversions
+
     char delimiter[] = " "; // what each of our terms are separated by
     char *token; // used to walk through the expression
 
     token = strtok(expression, delimiter); // prime the token
+
+    struct node* node; // stores node that will be pused to stack
 
     char* output = (char*)calloc(sizeof(expression)/sizeof(char),sizeof(char)); // allocate memory to char array
     int count = 0; // keeps track of location in char array
@@ -42,8 +46,18 @@ char* convertToPostfix (char* expression, int* status) {
         }
         // if the token is '(', push it to the stack and increment '(' counter
         else if (*token == '(') {
-            push(createNode(*token, OPERATOR));
-            numParentheses++; 
+            node = createNode(*token, OPERATOR);
+
+            // handle case where memory allocation fails
+            if (node == NULL) {
+                *status = 7;
+                printStatusMessage(*status);
+
+                return NULL;
+            }
+
+            push(node);
+            numParentheses++;
         }
         // if the token is ')'...
         else if (*token == ')') {
@@ -66,14 +80,24 @@ char* convertToPostfix (char* expression, int* status) {
                 output[count++] = ' ';
             }
 
-            push(createNode(*token, OPERATOR)); // otherwise, push token to stack
+            node = createNode(*token, OPERATOR);
+
+            // handle case where memory allocation fails
+            if (node == NULL) {
+                *status = 7;
+                printStatusMessage(*status);
+
+                return NULL;
+            }
+
+            push(node); // otherwise, push token to stack
         }
         // handles case where input is invalid
         else {
             // set status code, print status message
             *status = 6;
             printStatusMessage(*status);
-    
+
             return NULL;
         }
 

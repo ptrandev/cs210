@@ -19,6 +19,8 @@ typedef struct node {
 } node;
 
 double evaluate (char* expression, int* status) {
+    clearStack(); // remove all residual nodes left from prior evaluations
+
     char delimiter[] = " "; // what each of our terms are separated by
     char *token; // used to walk through the expression
 
@@ -49,8 +51,6 @@ double evaluate (char* expression, int* status) {
                     *status = 3;
                     printStatusMessage(*status);
 
-                    clearStack(); // clear all nodes from the stack for the next evaluation
-
                     return 0.0;
                 }
                 // return result of operation according to the operator
@@ -67,8 +67,6 @@ double evaluate (char* expression, int* status) {
                             // set status code and print status message
                             *status = 4;
                             printStatusMessage(*status);
-
-                            clearStack(); // clear all nodes from the stack for the next evaluation
 
                             return 0.0;
                         }
@@ -89,13 +87,20 @@ double evaluate (char* expression, int* status) {
                 *status = 3;
                 printStatusMessage(*status);
 
-                clearStack(); // clear all nodes from the stack for the next evaluation
-
                 return 0.0;
             }
 
             // create node containing result of calculation and push to stack
             node = createNode(result, NUMBER);
+
+            // handle case where memory allocation fails
+            if (node == NULL) {
+                *status = 7;
+                printStatusMessage(*status);
+
+                return 0.0;
+            }
+
             push(node);
 
             // free nodes we performmed operations on, we're done using them
@@ -107,6 +112,15 @@ double evaluate (char* expression, int* status) {
         else if (isNumber(token)) {
             // create node containing the number and push to stack
             node = createNode(atol(token), NUMBER);
+
+            // handle case where memory allocation fails
+            if (node == NULL) {
+                *status = 7;
+                printStatusMessage(*status);
+
+                return 0.0;
+            }
+
             push(node);
         }
         // ERROR: the input is invalid
@@ -114,8 +128,6 @@ double evaluate (char* expression, int* status) {
             // set status code and print status message
             *status = 6;
             printStatusMessage(*status);
-
-            clearStack(); // clear all nodes from the stack for the next evaluation
 
             return 0.0;
         }
@@ -131,8 +143,6 @@ double evaluate (char* expression, int* status) {
         *status = 5;
         printStatusMessage(*status);
 
-        clearStack(); // clear all nodes from the stack for the next evaluation
-
         return 0.0;
     }
 
@@ -141,8 +151,6 @@ double evaluate (char* expression, int* status) {
         // set status code and print status message
         *status = 2;
         printStatusMessage(*status);
-
-        clearStack(); // clear all nodes from the stack for the next evaluation
 
         return 0.0;
     }

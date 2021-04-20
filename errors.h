@@ -11,6 +11,7 @@
 #define BYZERO 4
 #define NOINPUT 5
 #define INVALIDINPUT 6
+#define MEMFAIL 7
 
 void printStatusMessage(int status);
 
