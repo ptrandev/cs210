@@ -30,6 +30,15 @@ char* convertToPostfix (char* expression, int* status) {
     struct node* node; // stores node that will be pused to stack
 
     char* output = (char*)calloc(sizeof(expression)/sizeof(char),sizeof(char)); // allocate memory to char array
+
+    // handle case where memory allocation fails
+    if (output == NULL) {
+        *status = 7;
+        printStatusMessage(*status);
+
+        return NULL;
+    }
+
     int count = 0; // keeps track of location in char array
 
     // keep track of parentheses, odd # means mismatched pairs
